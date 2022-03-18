@@ -1,10 +1,12 @@
 import React from 'react'
+import { getProviders, signIn } from 'next-auth/react'
 
 function login() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-black">
       <img className="mb-5 w-52" src="http://links.papareact.com/9x" alt="" />
-      {objective.values(providers).map((provider) => (
+
+      {Object.values(providers).map((provider) => (
         <div key={provider.name}>
           <button
             className="rounded-full bg-[#18D860] p-5 text-white"

@@ -47,8 +47,7 @@ export default NextAuth({
       if (account && user) {
         return {
           ...token,
-          accessToken: account,
-          access_token,
+          accessToken: account.access_token,
           refreshToken: account.refresh_token,
           username: account.providerAccountId,
           accessTokenExpires: account.expires_at * 1000, // handling expirey ties in Milliseconds hence * 1000
@@ -62,7 +61,7 @@ export default NextAuth({
       }
 
       // Access token has expired, so we need to refresh it...
-      console.log('ACCESS TOKEN HAS eXPIRED, REFRESH...')
+      console.log('ACCESS TOKEN HAS EXPIRED, REFRESH...')
       return await refreshAccessToken(token)
     },
 
