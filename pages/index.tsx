@@ -6,6 +6,7 @@ const Home: NextPage = () => {
     <div className="h-screen overflow-hidden bg-black">
       <main className="">
         <Sidebar />
+        <Center />
         {/* center */}
       </main>
 
